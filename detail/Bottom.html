@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="desktop.css" media="screen and (min-width:1024px)">
+    <link rel="stylesheet" href="tablet.css" media="screen and (min-width:768px) and (max-width:1023px)">
+    <link rel="stylesheet" href="small.css" media="screen and (max-width:767px)">
+    <script src="https://kit.fontawesome.com/cd9a5136e0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <p>コンテンツを準備中です。</p>
+            </div>
+        </div>
+        <div class="fixButton">
+            <i class="scrollToTop fa-solid fa-arrow-up"></i>
+        </div>
+        <header>
+            <a href="../index.html" class="logo w-16 h-16 ml-5">
+                <img src="../image/content/logo.png" alt="">
+            </a>
+            <div class="nav">
+                <ul>
+                    <a href="../list/Best.html">Best</a>
+                    <a href="../list/New.html">New</a>
+                </ul>
+                <div></div>
+                <ul>
+                    <a href="../list/Suit.html">Suit</a>
+                    <a href="../list/Shirts.html">Shirts</a>
+                    <a href="../list/Outer.html">Outer</a>
+                    <a href="../list/Zip-up.html">Zip-up</a>
+                    <a href="../list/Hoodie.html">Hoodie</a>
+                    <a href="../list/Bottom.html">Bottom</a>
+                </ul>
+            </div>
+            <div class="menu" onclick="openMypage()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="scrollmenu">
+                <a href="../index.html" class="logo">
+                    <img src="../image/content/logo.png" alt="">
+                    <h3>Ryben</h3>
+                </a>
+                <div class="menu" onclick="openMypage()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="mypage">
+                <div class="bg" onclick="closeMypage()"></div>
+                <div class="mypageinfo">
+                    <div class="logo">
+                        <img src="../image/content/logo.png" alt="">
+                        <h3>Ryben</h3>
+                    </div>
+                    <div onclick="openPopup()" class="user">
+                        <img src="../image/content/user-regular.svg" alt="">
+                        <h4>My page</h4>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="../list/Suit.html">
+                                <h3>Suit</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../list/Shirts.html">
+                                <h3>Shirt</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../list/Hoodie.html">
+                                <h3>Hooide</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../list/Zip-up.html">
+                                <h3>Zipup</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../list/Outer.html">
+                                <h3>Outer</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../list/Bottom.html">
+                                <h3>Bottom</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section class="main">
+            <div class="pictures">
+                <div class="picture_list">
+                    <img src="../image/Bottom/1.jpg" onclick="displayImage(this.src)"></img>
+                    <img src="../image/Bottom/2.jpg" onclick="displayImage(this.src)"></img>
+                    <img src="../image/Bottom/3.jpg" onclick="displayImage(this.src)"></img>
+                    <img src="../image/Bottom/4.jpg" onclick="displayImage(this.src)"></img>
+                </div>
+                <div class="dots">
+                    <span class="dot" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <span class="dot" data-index="3"></span>
+                </div>
+                <div class="main_picture">
+                    <img src="../image/Bottom/1.jpg" id="displayed-image" onclick="displayImage(this.src)"></img>
+                </div>
+            </div>
+            <div class="info">
+                <h1>商品名</h1>
+                <div class="price">
+                    <h2>22%</h2>
+                    <p>12000￥</p>
+                    <s>15000￥</s>
+                </div>
+                <ul>
+                    <li>
+                        <span>素材構成</span>
+                        <p>100% ポリエステル</p>
+                    </li>
+                    <li>
+                        <span>原産国</span>
+                        <p>日本</p>
+                    </li>
+                    <li>
+                        <span>性別タイプ</span>
+                        <p>メンズ</p>
+                    </li>
+                    <li>
+                        <span>送料</span>
+                        <p>配送ごとに¥250</p>
+                    </li>
+                </ul>
+                <div class="size">
+                    <span>オプション</span>
+                    <select name="size">
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="2xl">2XL</option>
+                    </select>
+                </div>
+                <div class="button">
+                    <div onclick="openPopup()">
+                        <p>カートに入れる</p>
+                    </div>
+                    <div onclick="openPopup()">
+                        <p>カートに入れる</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="list">
+            <h1 class="list_title">おすすめアイテム</h1>
+            <ul>
+                <a href="../detail/Bottom.html" >
+                    <div class="list_1">
+                        <img src="../image/Bottom/5.jpg" alt="">
+                    </div>
+                    <h1>商品名</h1>
+                    <div>
+                        <h2>22%</h1>
+                        <p>12000￥</p>
+                        <s>15000￥</s>
+                    </div>
+                </a>
+                <a href="../detail/Bottom.html">
+                    <div class="list_2">
+                        <img src="../image/Bottom/6.jpg" alt="">
+                    </div>
+                    <h1>商品名</h1>
+                    <div>
+                        <h2>22%</h1>
+                        <p>12000￥</p>
+                        <s>15000￥</s>
+                    </div>
+                </a>
+                <a href="../detail/Bottom.html">
+                    <div class="list_3">
+                        <img src="../image/Bottom/7.jpg" alt="">
+                    </div>
+                    <h1>商品名</h1>
+                    <div>
+                        <h2>22%</h1>
+                        <p>12000￥</p>
+                        <s>15000￥</s>
+                    </div>
+                </a>
+                <a href="../detail/Bottom.html">
+                    <div class="list_4">
+                        <img src="../image/Bottom/8.jpg" alt="">
+                    </div>
+                    <h1>商品名</h1>
+                    <div>
+                        <h2>22%</h1>
+                        <p>12000￥</p>
+                        <s>15000￥</s>
+                    </div>
+                </a>
+            </ul>
+        </section>
+    </div>
+    <footer>
+        <div>
+            <div>
+                <ul>
+                    <h1>Rybenについて</h1>
+                    <li onclick="openPopup()">会社紹介</li>
+                    <li onclick="openPopup()">お知らせ</li>
+                    <li onclick="openPopup()">社会貢献・地域活動</li>
+                </ul>
+                <ul>
+                    <h1>ヘルプ＆ガイド</h1>
+                    <li onclick="openPopup()">配送料と配送情報</li>
+                    <li onclick="openPopup()">商品の返品・交換</li>
+                    <li onclick="openPopup()">お客様サポート</li>
+                </ul>
+            </div>
+            <span>
+                <img src="../image/content/Ryben.svg" alt="">
+            </span>
+        </div>
+    </footer> 
+    <script>
+        function displayImage(imageSrc) {
+            document.getElementById('displayed-image').src = imageSrc;
+        }
+    </script>
+    <script src="../common.js"></script>
+    <script src="../detail.js"></script>
+</body>
+</html>

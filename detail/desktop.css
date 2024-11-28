@@ -1,0 +1,536 @@
+body {
+    overflow-x: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+@font-face {
+    font-family: 'Noto700';
+    src: url("../font/NotoSerifJP-Bold.otf");
+}
+  
+@font-face {
+    font-family: 'Noto400';
+    src: url("../font/NotoSerifJP-Medium.otf");
+}
+  
+@font-face {
+    font-family: 'Abril_Fatface';
+    src: url("../font/AbrilFatface-Regular.ttf");
+}
+
+/*  */
+.popup {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+}
+
+
+/*  */
+
+.container {
+    margin: 0 auto;
+    margin-top: 16px;
+    padding: 0 5%;
+}
+
+.fixButton {
+    position: fixed;
+    bottom: 25%;
+    right: 0;
+    width: 3%;
+    background: #080F24;
+    color: #fff;
+    padding: 6px;
+    border-radius: 15% 0 0 15%;
+    z-index: 10;
+    text-align: center;
+}
+
+.fa-arrow-up {
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+
+/*  */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin-top: 5%;
+    font-family: 'Abril_Fatface';
+    margin-bottom: 10%;
+}
+
+header a {
+    font-size: 1.1vw;
+}
+
+
+.logo {
+    width: 3rem;
+    height: 3rem;
+    margin-left: 5%;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu {
+    width: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25px;
+    z-index: 10;
+}
+
+.menu .bar {
+    height: 4px;
+    width: 100%;
+    background-color: #333;
+    transition: all 0.3s;
+}
+
+.scrollmenu {
+    position: fixed;
+    top: -7vh;
+    left: 0;
+    width: 100%;
+    height: 6vh;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: top 0.3s ease;
+}
+
+.scrollmenu.show {
+    top: 0; 
+}
+
+.scrollmenu .logo {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 30%;
+}
+
+.scrollmenu .logo h3 {
+    font-size: 1.5vw;
+}
+
+.scrollmenu .menu {
+    position: relative;
+    margin-right: 5%;
+}
+
+.mypage {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 30;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.mypage .bg {
+    background-color: #000;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+}
+
+
+.mypage .mypageinfo {
+    position: fixed;
+    width: 15%;
+    min-width: 250px;
+    background-color: #fff;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    transition: right 0.5s ease
+}
+
+.mypage.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mypage.active .mypageinfo{
+    right: 0; 
+}
+
+.mypage.active .bg {
+    opacity: 0.6;
+}
+
+.mypage .mypageinfo .logo {
+    margin-top: 15%;
+    margin-bottom: 10%;
+    display: flex;
+    align-items: center;
+    gap: 30%;
+    margin-left: 10%;
+}
+
+.mypage .mypageinfo .logo h3 {
+    font-size: 2.5vw;
+    font-family: 'Noto400'
+}
+
+
+.mypage li a{
+    display: flex;
+    width: 100%;
+}
+
+.mypage .user {
+    display: flex;
+    gap: 5%;
+    align-items: center;
+    margin-left: 15%;
+    width: 80%;
+    cursor: pointer;
+}
+
+.mypage .user img {
+    width: 10%;
+    aspect-ratio: 1 / 1;
+}
+
+.mypage ul {
+    width: 100%;
+    border-top: 2px solid #4a4a4a;
+    margin-top: 3%;
+    padding: 10%;
+    justify-self: center;
+    box-sizing: border-box;
+}
+
+.mypage ul li {
+    border-bottom: 1px solid #aaaaaa;
+    margin-bottom: 10%;
+    padding-bottom: 3%;
+    padding-left: 10%;
+}
+
+.mypage ul h3 {
+    font-size: 1vw;
+    position: relative;
+    font-family: 'Noto400'
+}
+
+.mypage ul h3::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 35%;
+    background-color: #000;
+    width: 5px;
+    height: 5px;
+    border-radius: 100px;
+}
+
+header .nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 85%;
+}
+
+header .nav ul:nth-of-type(1) {
+    display: flex;
+    gap: 50%;
+    cursor: pointer;
+    width: 10%;
+}
+
+header .nav ul:nth-of-type(2) {
+    display: flex;
+    gap: 3%;
+    cursor: pointer;
+    width: 60%;
+    justify-content: space-between;
+}
+
+header .nav div {
+    width: 2px;
+    height: 18px;
+    background: #000;
+}
+
+/*  */
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.pictures {
+    width: 50%;
+    display: flex;
+}
+
+.picture_list {
+    display: flex;
+    flex-flow: column;
+    width: 20%;
+    aspect-ratio: 1 / 1;
+    align-items: end;
+}
+
+.picture_list img {
+    width: 80%;
+    aspect-ratio: 1 / 1 ;
+    object-fit: cover;
+}
+
+.main_picture {
+    width: 80%;
+}
+
+.main_picture img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 0 2% 2% 2%;
+}
+
+.info {
+    width: 40%;
+    border-top: 2px solid #202020;
+    padding: 3%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.info h1 {
+    font-family: 'Noto700';
+    font-size: 1.6rem;
+    margin-bottom: 3%;
+}
+
+.price {
+    display: flex;
+    font-family: 'Noto400';
+    align-items: center;
+    margin-bottom: 1%;
+}
+
+.price h2 {
+    color: rgb(12, 191, 191);
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.price s {
+    font-size: 0.7rem;
+    text-decoration:line-through;
+    color: #666;
+}
+
+.info ul {
+    border-top: 1px solid #b3b3b3;
+    border-bottom: 1px solid #b3b3b3;
+    padding: 5% 0;
+}
+
+.info ul li {
+    display: flex;
+    padding: 3% 0;
+}
+
+.info ul li span {
+    font-family: 'Noto400';
+    color: #666;
+    margin-right: 5%;
+    width: 30%;
+}
+
+.info ul li p {
+    font-family: 'Noto700';
+}
+
+.size {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.size span {
+    font-family: 'Noto700';
+}
+
+.size select {
+    font-family: 'Noto700'; 
+    border: 1px solid #000;
+    margin-right: 5%;
+}
+
+.button {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    color: #fff;
+    gap: 3%;
+}
+
+.button div {
+    width: 30%;
+    aspect-ratio: 2 / 0.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-family: 'Noto400'; 
+    cursor: pointer;
+}
+
+.button div:nth-of-type(1) {
+    background-color: #5E6784;
+}
+
+.button div:nth-of-type(2) {
+    background-color: #404648;
+}
+
+/*  */
+
+.list {
+    margin-top: 8%;
+}
+
+.list_title {
+    font-family: 'Noto400';
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 1.6rem;
+}
+
+.list ul {
+    display: grid;
+    grid-template-columns: repeat(4,1fr); 
+    flex-wrap: wrap;
+    gap: 2%;
+    font-family: 'Noto400';
+}
+
+.list ul a div img{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.list ul a h1 {
+    font-size: 1.2rem;
+    font-family: 'Noto700';
+    border-bottom: 2px solid #000;
+    padding: 4px 0 4px 4px;
+}
+
+.list ul a div:nth-of-type(2){
+    display: flex;
+    padding-left: 2%;
+    align-items: center;
+    padding-top: 1%;
+}
+
+.list ul a h2 {
+    color: rgb(12, 191, 191);
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.list ul a p {
+    padding-left: 3%;
+}
+
+.list ul a s {
+    font-size: 0.7rem;
+    text-decoration:line-through;
+    color: #666;
+}
+
+/*  */
+footer{
+    background-color: #080F24;
+    height: 200px;
+    margin-top: 10%;
+}
+
+footer > div {
+    display: flex;
+    height: 100%;
+    padding: 0 8%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer > div > div {
+    display: flex;
+    width: 32%;
+    min-width: 300px;
+}
+
+footer div div ul {
+    font-family: "Noto400";
+    color: #fff;
+    margin-right: 10%;
+}
+
+footer div div ul h1 {
+    margin-bottom: 20px;
+    cursor: default
+}
+
+footer div div ul li {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+footer div span {
+    display: block;
+    width: 80px;
+    margin-right: 5%;
+}
+
